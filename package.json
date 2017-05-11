@@ -1,0 +1,29 @@
+{
+  "name": "illegaloperations",
+  "version": "1.0.0",
+  "description": "Fantasy Football Draft ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrodwell/IllegalOperations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrodwell/IllegalOperations/issues"
+  },
+  "homepage": "https://github.com/rrodwell/IllegalOperations#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "sequelize": "^3.30.4"
+  }
+}
