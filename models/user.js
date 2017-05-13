@@ -1,14 +1,36 @@
-var Sequelize = require("sequelize");
+module.exports = function(sequelize, DataTypes) {
+    var User = sequelize.define("user", {
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        
+        user_email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
 
-var sequelize = require("../config/connection.js");
+        user_ID: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
 
-var User = sequelize.define("user", {
-    user_name: Sequelize.STRING,
-    user_email: Sequelize.STRING,
-    user_ID: Sequelize.STRING,
-    user_password: Sequelize.STRING
-});
-
-User.sync();
-
-module.exports = User;
+        user_password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        } 
+    });
+    return User;
+}
