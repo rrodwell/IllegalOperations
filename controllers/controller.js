@@ -1,3 +1,4 @@
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -88,3 +89,4 @@ var db = require("../models");
 
 // Export routes for server.js to use.
 module.exports = router;
+
