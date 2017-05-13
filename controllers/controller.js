@@ -1,7 +1,7 @@
 
 var db = require("../models");
-
-module.exports = function(app) {
+var express = require("express");
+var app =express.Router();
     //get api data for all data 
     app.get("/api/all/", function(req, res) {
         db.Player.findAll({
@@ -73,20 +73,17 @@ module.exports = function(app) {
                 res.json(dbAllPlayers);
             });
     });
+       app.get("/api/team/all", function(req, res) {
+        db.Team.findAll({
+            })
+            .then(function(dbAllPlayers) {
+                res.json(dbAllPlayers);
+            });
+    });
 
-
-};
-
-var express = require("express");
-
-var router = express.Router();
-var db = require("../models");
-
-
-// Create all our routes and set up logic within those routes where required.
 
 
 
 // Export routes for server.js to use.
-module.exports = router;
+module.exports = app;
 
