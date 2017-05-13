@@ -4,7 +4,10 @@ var db = require("../models");
 module.exports = function(app) {
     //get api data for all data 
     app.get("/api/all/", function(req, res) {
-        db.Player.findAll({})
+        db.Player.findAll({
+
+                order: ["Fantasy Points", "ASC"]
+            })
             .then(function(dbAllPlayers) {
                 res.json(dbAllPlayers);
             });
@@ -62,7 +65,7 @@ module.exports = function(app) {
     app.get("/api/posts/category/kicker", function(req, res) {
         db.Player.findAll({
                 where: {
-                Position: K
+                    Position: K
                 },
                 order: ["Fantasy Points", "ASC"]
             })
