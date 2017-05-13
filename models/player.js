@@ -67,7 +67,7 @@ module.exports = function(sequelize, DataTypes) {
         fantasy_points: {
             //dec 10 dig 3 places
             type: DataTypes.DECIMAL(10, 2),
-            allowNull: false,
+            allowNull: false
         }
     });
     return Player;
