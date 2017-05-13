@@ -1,12 +1,19 @@
-var Sequelize = require("sequelize");
+module.exports = function(sequelize, DataTypes) {
+    var Team = sequelize.define("team", {
+        team_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
 
-var sequelize = require("../config/connection.js");
+        team_strength: {
+            type: DataTypes.DECIMAL(10,2),
+            allowNull: false
+        }
+    });
+    return Team;
+}
 
-var Team = sequelize.define("team", {
-    team_name: Sequelize.STRING,
-    team_strength: Sequelize.DECIMAL(10,2)
-});
 
-Team.sync();
-
-module.exports = Team;
