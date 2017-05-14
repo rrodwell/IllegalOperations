@@ -1,0 +1,39 @@
+body {
+    background-image: url("../images/field.jpg");
+    padding-top: 2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-attachment: fixed;
+}
+
+#logo{
+    width: 50%;
+    float: left;
+}
+
+.well {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.dropdown{
+    float: right;
+}
+
+#title{
+    width: 50%;
+    vertical-align: bottom;
+    float: right;
+
+}
+.headshot_small{
+    height: 38px;
+}
+.headshot_large{
+    max-height: 200px;
+    max-width: 25% !important;
+}
+.td_headshot{
+    padding: 0px !important;
+}
