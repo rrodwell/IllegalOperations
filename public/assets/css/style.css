@@ -1,0 +1,66 @@
+body {
+    background-image: url("../images/field.jpg");
+    padding-top: 2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-attachment: fixed;
+}
+
+#logo{
+    width: 50%;
+    float: left;
+}
+
+.well {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.dropdown{
+    float: right;
+}
+
+#title{
+    width: 50%;
+    vertical-align: bottom;
+    float: right;
+
+}
+.headshot_small{
+    height: 38px;
+    vertical-align: bottom;
+}
+.headshot_large{
+    height: 115px;
+    width: auto;
+    vertical-align: bottom;
+    /*max-width: 100%;*/
+}
+.headshot_large{
+    /*height: 105px;*/
+    /*width: auto;*/
+    vertical-align: bottom;
+    /*max-width: 100%;*/
+}
+.td_headshot{
+    padding: 0px !important;
+}
+dl {
+    margin-top: 0;
+     margin-bottom: 0px;
+}
+.modal-body {
+    position: relative;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+p {
+     margin: 0;
+}
+
+/*------------------ login page*/
+
+.help-block{
+    color: orangered;
+}
