@@ -1,70 +1,70 @@
 module.exports = function(sequelize, DataTypes) {
     var Player = sequelize.define("player", {
-        player_name: {
+        Name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        year: {
+        YearClear: {
             //yyyy
             type: DataTypes.STRING,
             allowNull: false
         },
-        position: {
+        Position: {
             //WR
             type: DataTypes.STRING,
             allowNull: false
         },
-        pro_bowl: {
+        ProBowl: {
             //boolean 0/1
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        age: {
+        Age: {
             //int 2 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        wr: {
+        WR: {
             //boolean 0/1
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        games_played: {
+        GamesPlayed: {
             //int 2 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        games_started: {
+        GamesStarted: {
             //int 2 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        receptions: {
+        Receptions: {
             //int 2 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        longest_reception: {
+        LongestReception: {
             //int 2 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        longest_reception_attempt: {
+        LongestRushingAttempt: {
             //int 2 digits (can be neg)
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        pick_number: {
+        PickNumber: {
             //int 3 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        yards_sacked: {
+        YdsSkd: {
             //int 3 digits
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        fantasy_points: {
+        FantasyPoints: {
             //dec 10 dig 3 places
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
