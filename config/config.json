@@ -1,12 +1,8 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "Test1234",
-=======
-    "password": "maade",
->>>>>>> 6d5de56d92e597ed970bf92569a0bfce8aa6bd3e
-    "database": "nflplayers2016_db",
+    "database": "illegal_ops_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

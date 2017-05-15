@@ -66,9 +66,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         FantasyPoints: {
             //dec 10 dig 3 places
-            type: DataTypes.DECIMAL(10, 2),
+            type: DataTypes.DECIMAL(10, 3),
             allowNull: false
         }
     });
     return Player;
-}
+};
