@@ -24,8 +24,6 @@ app.get("/", function(req, res) {
         .then(function(data) {
             var hbsObject = {
                 player: data
-                
-            
             };
             res.render("index", hbsObject);
         });
