@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
             set: function(val) { // need to look into salt hashing for this part
                 this.setDataValue('password', val);
                 this.setDataValue('password_hash', this.salt + val);
-            }
+            },
             validate: { // need more pw restrictions
                 isLongEnough: function(val) { // just an example; isLongEnough may have been deprecated
                     if (val.length < 7 ) {
