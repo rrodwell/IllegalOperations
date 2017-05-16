@@ -30,7 +30,7 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/controller.js");
+var routes = require("./controllers/jieun_test_controller.js");
 
 app.use("/", routes);
 
