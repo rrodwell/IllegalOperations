@@ -1,4 +1,4 @@
-LOAD DATA LOCAL INFILE 'C:/Users/Jieun/Desktop/gtbc/group_projects/IllegalOperations/db/2016Players.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/Emily/Desktop/project/IllegalOperations/db/2016Players.csv'
 INTO TABLE players
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
