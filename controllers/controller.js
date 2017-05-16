@@ -26,6 +26,7 @@ app.get("/", function(req, res) {
                 player: data
             };
             res.render("index", hbsObject);
+            
         });
 });
 
