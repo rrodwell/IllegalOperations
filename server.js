@@ -40,3 +40,4 @@ db.sequelize.sync({ force: true }).then(function () {
         console.log('Node app is running on port', app.get('port'));
     });
 });
+
