@@ -94,6 +94,8 @@ var app =express.Router();
 
 // USER ROUTING DRAFT===============================
 
+
+
 app.post("/user/signup", function(req, res) {
 
     db.User.create({
