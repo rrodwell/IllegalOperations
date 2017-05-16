@@ -1,12 +1,5 @@
     var db = require("../models");
 var express = require("express");
-<<<<<<< HEAD
-
-var app = express.Router();
-    //get api data for all data 
-    app.get("/api/all/", function(req, res) {
-        db.Player.findAll({
-=======
 var app = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
@@ -34,7 +27,6 @@ app.get("/", function (req, res) {
         });
 });
 
->>>>>>> 7a448f8bcd64a69fcc8335dc641879be86bde1b5
 
 
 //get api data for all data
