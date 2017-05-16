@@ -1,12 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-L/tgI3wSsbb3f/nW9V6Yqlaw3Gj7mpE56LWrhew/c8MIhAYWZ/FNirA64AVkB5pI" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <title>Illegal Formation</title>
+</head>
+
+<body>
 <div class="container-fluid">
 
 
     <!--header-->
     <div class="well">
         <div class="row">
-            <img id="logo" src="assets/images/Illegal_Formation_logo_01.png" alt="">
+            <img id="logo" src="./images/Illegal_Formation_logo_01.png" alt="">
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">USER
                     NAME<span class="caret"></span></a>
@@ -37,7 +52,7 @@
                     <div class="row">
                         <div class="col-xs-5">
 
-                            <img class="headshot_large" src="assets/images/blankHeadshot.png" alt="...">
+                            <img class="headshot_large" src="./images/blankHeadshot.png" alt="...">
 
                         </div>
                         <div class="col-xs-7">
@@ -70,16 +85,15 @@
                 <!--next top players-->
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                        {{#each players}}
                     <tr>
                         <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
                                                                                         class="btn btn-success btn-xs">&#x2713</a>
                         </td>
-                        <td>{{this.Position}}</td>
-                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
-                        <td>{{this.FantasyPoints}}</td>
+                        <td>position</td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
                     </tr>
-                        {{/each}}
                     </tbody>
                 </table>
 
@@ -94,14 +108,30 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each QBs}}
-                        <tr>
-                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
-                            </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
-                            <td>{{this.FantasyPoints}}</td>
-                        </tr>
-                    {{/each}}
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
+                    </tr>
                     </tbody>
                 </table>
 
@@ -112,15 +142,14 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    <tbody>
-                {{#each WRs}}
                     <tr>
-                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
                         </td>
-                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
-                        <td>{{this.FantasyPoints}}</td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
                     </tr>
-                {{/each}}
                     </tbody>
                 </table>
 
@@ -131,14 +160,14 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each RBs}}
-                        <tr>
-                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
-                            </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
-                            <td>{{this.FantasyPoints}}</td>
-                        </tr>
-                    {{/each}}
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
+                    </tr>
                     </tbody>
                 </table>
 
@@ -149,14 +178,14 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each TEs}}
-                        <tr>
-                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
-                            </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
-                            <td>{{this.FantasyPoints}}</td>
-                        </tr>
-                    {{/each}}
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
+                    </tr>
                     </tbody>
                 </table>
 
@@ -167,14 +196,14 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each Ks}}
-                        <tr>
-                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
-                            </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
-                            <td>{{this.FantasyPoints}}</td>
-                        </tr>
-                    {{/each}}
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                            Name</a></td>
+                        <td>7.4</td>
+                    </tr>
                     </tbody>
                 </table>
 
@@ -191,7 +220,7 @@
                     <table class="table table-striped table-hover table-responsive">
                         <tbody>
                         <tr>
-                            <td class="td_headshot"><img class="headshot_small" src="assets/images/blankHeadshot.png" alt="">
+                            <td class="td_headshot"><img class="headshot_small" src="./images/blankHeadshot.png" alt="">
                             </td>
                             <td>position</td>
                             <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
@@ -226,7 +255,7 @@
                     <div class="row">
                         <div class="col-xs-6 col-md-4">
 
-                            <img class="img-responsive headshot_modal" src="assets/images/blankHeadshot.png" alt="...">
+                            <img class="img-responsive headshot_modal" src="./images/blankHeadshot.png" alt="...">
 
                         </div>
                         <div class="col-xs-6 col-md-8">
@@ -259,7 +288,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-warning btn-xs" data-dismiss="modal">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-dismiss="modal">&#x2713</a>
+                    <a href="#" class="btn btn-warning btn-xs" data-dismiss="modal">&#x2716</a> | <a href="#"
+                                                                                                     class="btn btn-success btn-xs"
+                                                                                                     data-dismiss="modal">&#x2713</a>
                 </div>
             </div>
         </div>
@@ -269,4 +300,6 @@
 </div>
 
 
-
+<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
