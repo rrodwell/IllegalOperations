@@ -35,8 +35,9 @@ var routes = require("./controllers/controller.js");
 app.use("/", routes);
 
 // app.listen(port);
-db.sequelize.sync({}).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
     app.listen(app.get('port'), function () {
         console.log('Node app is running on port', app.get('port'));
     });
 });
+

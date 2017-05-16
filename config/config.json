@@ -1,8 +1,14 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "emilykeen711",
     "password": "password123",
     "database": "nflplayers2016_db",
+=======
+    "username": "root",
+    "password": "Test1234",
+    "database": "illegal_ops_db",
+>>>>>>> a54e223560f9b8e6fdbde0efd8fb0753bda4b619
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
