@@ -24,6 +24,26 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        qb: {
+            //boolean 0/1
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        rb: {
+            //boolean 0/1
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        k: {
+            //boolean 0/1
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        te: {
+            //boolean 0/1
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
         wr: {
             //boolean 0/1
             type: DataTypes.BOOLEAN,
