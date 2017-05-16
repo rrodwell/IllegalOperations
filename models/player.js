@@ -4,11 +4,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        yearClear: {
-            //yyyy
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         position: {
             //WR
             type: DataTypes.STRING,
@@ -87,6 +82,10 @@ module.exports = function(sequelize, DataTypes) {
         fantasyPoints: {
             //dec 10 dig 3 places
             type: DataTypes.DECIMAL(10, 3),
+            allowNull: false
+        },
+        imgPath: {
+            type: DataTypes.STRING,
             allowNull: false
         }
     });
