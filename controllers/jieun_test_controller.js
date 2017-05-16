@@ -109,7 +109,7 @@ app.post("/user/signup", function(req, res) {
 
 app.post("/user/login", function(req, res) {
 
-    db.User.findOrCreate({
+    db.User.findOne({ // needs correction
         where: {
             email: req.body.email.trim()
         },
