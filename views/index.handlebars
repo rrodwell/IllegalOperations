@@ -70,7 +70,7 @@
                 <!--next top players-->
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                        {{#each players}}
+                        
                     <tr>
                         <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
                                                                                         class="btn btn-success btn-xs">&#x2713</a>
@@ -79,7 +79,8 @@
                         <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.Name}}</a></td>
                         <td>{{this.FantasyPoints}}</td>
                     </tr>
-                        {{/each}}
+                    }
+                    }
                     </tbody>
                 </table>
 
@@ -94,7 +95,7 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each QBs}}
+                    {{#each player}}
                         <tr>
                             <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
                             </td>
@@ -113,7 +114,7 @@
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
                     <tbody>
-                {{#each WRs}}
+                {{#each player}}
                     <tr>
                         <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
                         </td>
@@ -131,7 +132,7 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each RBs}}
+                    {{#each player}}
                         <tr>
                             <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
                             </td>
@@ -139,6 +140,7 @@
                             <td>{{this.FantasyPoints}}</td>
                         </tr>
                     {{/each}}
+
                     </tbody>
                 </table>
 
@@ -149,7 +151,7 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each TEs}}
+                    {{#each player}}
                         <tr>
                             <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
                             </td>
@@ -167,7 +169,7 @@
 
                 <table class="table table-striped table-hover table-responsive">
                     <tbody>
-                    {{#each Ks}}
+                    {{#each player}}
                         <tr>
                             <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
                             </td>
