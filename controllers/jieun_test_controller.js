@@ -112,10 +112,6 @@ app.post("/user/login", function(req, res) {
     db.User.findOne({ // needs correction
         where: {
             email: req.body.email.trim()
-        },
-        defaults: {
-            email: req.email.trim(),
-            passwordHash: req.body.passwordHash.trim()
         }
     }).then(function(result) {
         console.log(result);
