@@ -2,7 +2,7 @@ var db = require("../models");
 var express = require("express");
 var app =express.Router();
 
-    app.get("/api/all/", function(req, res) {
+app.get("/api/all/", function(req, res) {
     db.player.findAll({
             order: [
                 ["FantasyPoints", "DESC"]
