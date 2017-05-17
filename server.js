@@ -3,7 +3,7 @@ var express = require("express"),
     methodOverride = require("method-override"),
     jwt = require("jsonwebtoken"),
     jwtExp = require("express-jwt"),
-    tokenSecret = require("tokensecret.js"),
+    tokenSecret = require("./tokensecret.js"),
     cookieParser = require("cookie-parser");
 
 
