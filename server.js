@@ -3,7 +3,7 @@ var express = require("express"),
     methodOverride = require("method-override"),
     jwt = require("jsonwebtoken"),
     jwtExp = require("express-jwt"),
-    tokenSecret = require("./config/tokensecret.js"),
+   // tokenSecret = require("./config/tokensecret.js"),
     cookieParser = require("cookie-parser");
 
 
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(cookieParser(tokenSecret));
+//app.use(cookieParser(tokenSecret));
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
@@ -48,18 +48,18 @@ app.use("/secure", function(req, res, next) {
     res.render("/login");
     console.log("not authorized");
   } else {
-    jwt.verify(req.header("Authorization"), tokenSecret, function(err, decoded) {
-      if (err) {
-        console.log("err", err);
-        console.log("not authorized")
-        res.render("/login");
-      } else {
-        res.json({"status": "authorized"});
-        console.log(decoded.data);
-        next();
+    //jwt.verify(req.header("Authorization"), tokenSecret, function(err, decoded) {
+      // if (err) {
+      //   console.log("err", err);
+      //   console.log("not authorized")
+      //   res.render("/login");
+      // } else {
+      //   res.json({"status": "authorized"});
+      //   console.log(decoded.data);
+      //   next();
       }
-    });
-  }
+    //});
+  //}
 });
 
 app.use("/secure", playersRoutes);
