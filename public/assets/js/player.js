@@ -42,8 +42,8 @@ function myfunction(apiInfo) {
 
 
         //$("player-name").push(myTeam)
-        var status = $(this).attr("data-status");
-        status.attr("data-status", "drafted");
+        // var status = $(this).attr("data-status");
+        // status.attr("data-status", "drafted");
     });
 
     $(".btn-warning").on("click", function() {
