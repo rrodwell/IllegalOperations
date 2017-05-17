@@ -8,7 +8,8 @@ var express = require("express"),
 
 
 var app = express();
-var PORT = process.env.PORT || 8080;
+app.set("port", (process.env.PORT || 8080));
+// var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -64,8 +65,14 @@ app.use("/secure", function(req, res, next) {
 
 app.use("/secure", playersRoutes);
 
+// db.sequelize.sync().then(function () {
+//     app.listen(PORT, function () {
+//         console.log("Node app is running on port " + PORT);
+//     });
+// });
+
 db.sequelize.sync().then(function () {
-    app.listen(PORT, function () {
-        console.log("Node app is running on port " + PORT);
+    app.listen(app.get("port"), function () {
+        console.log("Node app is running on port", app.get("port"));
     });
 });
