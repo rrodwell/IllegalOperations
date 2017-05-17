@@ -27,10 +27,10 @@ function myfunction(apiInfo) {
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
                 var tablePicture = $("<td class='td_headshot'> <img class='headshot_small' src='assets/images/playerImgs/" + apiInfo[i].imgPath + " ' alt=''></td>");
-                // var tablePosition = $("<td>" + childSnapshot.val().destinationName + "</td>");
-                // var tableName = $("<td>" + childSnapshot.val().frequencyMin + "</td>");
-                // var tableScore = $("<td>" + nextArrival + "</td>");
-                tableRow.append(tablePicture);
+                var tablePosition = $("<td>" + apiInfo[i].position + "</td>");
+                var tableName = $("<td>" + apiInfo[i].name + "</td>");
+                var tableScore = $("<td>" + apiInfo[i].fantasyPoints + "</td>");
+                tableRow.append(tablePicture,tablePosition,tableName,tableScore);
                 $("#team-roster").append(tableRow);
                 return
 
