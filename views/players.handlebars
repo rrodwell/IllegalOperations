@@ -40,8 +40,8 @@
 
                         </div>
                         <div class="col-xs-7">
-                            <a href="#" class="btn btn-warning btn-xs" data-key="{{player.0.name}}">&#x2716</a> | <a href="#"
-                            class="btn btn-success btn-xs">&#x2713</a>
+                            <a href="#" class="btn btn-warning btn-xs" {{player.0.name}}}">&#x2716</a> | <a href="#"
+                            class="btn btn-success btn-xs" {{player.0.name}}>&#x2713</a>
 
                             <p>
                                 <strong>{{player.0.position}} &nbsp;&nbsp;</strong>
@@ -84,7 +84,7 @@
 
                     {{#if this.qb}}
                             <tr >
-                                <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}" data-status = "active">&#x2713</a>
+                                <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.name}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}">&#x2713</a>
                                 </td>
                                 <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>
@@ -106,7 +106,7 @@
                     {{#each player}}
                     {{#if this.wr}}
                         <tr>
-                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                            <td><a href="#" class="btn btn-warning btn-xs"data-key= "{{this.name}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}">&#x2713</a>
                             </td>
                             <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
                             <td>{{this.fantasyPoints}}</td>
@@ -126,7 +126,7 @@
                         {{#each player}}
                     {{#if this.rb}}
                             <tr>
-                                <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                                <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.name}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}">&#x2713</a>
                                 </td>
                                 <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>
@@ -147,7 +147,7 @@
                     {{#each player}}
                     {{#if this.te}}
                             <tr>
-                                <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                                <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.name}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}">&#x2713</a>
                                 </td>
                                 <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>
@@ -167,7 +167,7 @@
                         {{#each player}}
                     {{#if this.k}}
                             <tr>
-                                <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                                <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.name}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}">&#x2713</a>
                                 </td>
                                 <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>
