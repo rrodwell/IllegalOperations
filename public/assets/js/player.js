@@ -5,7 +5,7 @@
 
     $.ajax({
 
-            url: "https://illegal-formation.herokuapp.com/api/all",
+            url: "http://illegal-formation.herokuapp.com/api/all",
             method: "GET"
         })
         .done(function(response) {
