@@ -51,7 +51,7 @@ app.post("/login", function(req, res) {
 
           //
           res.cookie("userToken", userToken, {
-            secure: true,
+            secure: process.env.NODE_ENV === "production",
             signed: true
           });
 
