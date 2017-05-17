@@ -2,6 +2,7 @@
   "development": {
     "username": "root",
     "password": "Z",
+
     "database": "nflplayers2016_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
