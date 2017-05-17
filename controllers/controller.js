@@ -20,9 +20,7 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/assets/index.html"));
 });
 
-app.get("/register", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/assets/register.html"));
-});
+
 
 app.get("/players", function(req, res) {
     db.player.findAll({
