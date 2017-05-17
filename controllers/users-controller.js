@@ -4,8 +4,8 @@ var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 var express = require("express");
 var app = express.Router();
-var salt = require("../config/salt.js");
-var tokenSecret = require("../config/tokensecret.js");
+var salt = require("../salt.js");
+var tokenSecret = require("../tokensecret.js");
 var jwtExp = require("express-jwt");
 
 app.post("/register", function(req, res) {
