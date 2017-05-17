@@ -1,0 +1,285 @@
+
+
+<div class="container-fluid">
+
+
+    <!--header-->
+    <div class="well">
+        <div class="row">
+            <img id="logo" src="assets/images/Illegal_Formation_logo_01.png" alt="">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">USER
+                    NAME<span class="caret"></span></a>
+                <ul class="dropdown-menu  dropdown-menu-right" role="menu">
+                    <li><a id="signOut" href="#">Sign Out</a></li>
+                    <li><a id="settings" href="#">Update User Settings</a></li>
+                    <li class="divider"></li>
+                    <li><a id="addLeague" href="#">Add Another League</a></li>
+                    <li class="divider"></li>
+                    <li><a class="leagueName" href="#">league name</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/header-->
+
+    <!--players div's-->
+    <div class="row">
+
+
+        <!--next best players-->
+        <div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-4 col-md-push-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">NEXT BEST AVAILABLE</div>
+
+                <!--top player bio-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-5">
+
+                            <img class="headshot_large" src="assets/images/blankHeadshot.png" alt="...">
+
+                        </div>
+                        <div class="col-xs-7">
+                            <a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+
+                            <p>
+                                <strong>QB &nbsp;&nbsp;</strong>
+                                <strong class="player-name"><a href="#" data-toggle="modal"
+                                                               data-target=".modal">Player
+                                    Name</a></strong>
+                            </p>
+
+                            <p>
+                                <strong>Age</strong>: 23 &nbsp;
+                                <strong>Rank</strong>: 217 &nbsp;
+
+                            </p>
+                            <p>
+                                <strong>Games Played</strong>: 217 &nbsp;
+                            </p>
+                            <p>
+                                <strong>Games Started</strong>: 217 &nbsp;
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!--/top player bio-->
+                <!--next top players-->
+                <table class="table table-striped table-hover table-responsive">
+                    <tbody>
+                        
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
+                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td>{{this.Position}}</td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
+                        <td>{{this.fantasyPoints}}</td>
+                    </tr>
+                    }
+                    }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!--/next best players-->
+
+        <!--players by position-->
+        <div class="col-xs-12 col-sm-6 col-sm-pull-6 col-md-4 col-md-pull-4">
+            <div class="panel panel-default pre-scrollable">
+                <div class="panel-heading">QUARTERBACKS</div>
+
+                <table class="table table-striped table-hover table-responsive">
+                    <tbody>
+                    {{#each player}}
+
+                {{#if this.qb}}
+                        <tr>
+                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                            </td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
+                            <td>{{this.fantasyPoints}}</td>
+                        </tr>
+                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="panel panel-default pre-scrollable">
+                <div class="panel-heading">WIDE RECEIVERS</div>
+
+                <table class="table table-striped table-hover table-responsive">
+                    <tbody>
+                    <tbody>
+                {{#each player}}
+                {{#if this.wr}}
+                    <tr>
+                        <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                        </td>
+                        <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
+                        <td>{{this.fantasyPoints}}</td>
+                    </tr>
+                    {{/if}}
+                {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="panel panel-default pre-scrollable">
+                <div class="panel-heading">RUNNING BACKS</div>
+
+                <table class="table table-striped table-hover table-responsive">
+                    <tbody>
+                    {{#each player}}
+                {{#if this.rb}}
+                        <tr>
+                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                            </td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
+                            <td>{{this.fantasyPoints}}</td>
+                        </tr>
+                        {{/if}}
+                    {{/each}}
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="panel panel-default pre-scrollable">
+                <div class="panel-heading">TIGHT ENDS</div>
+
+                <table class="table table-striped table-hover table-responsive">
+                    <tbody>
+                {{#each player}}
+                {{#if this.te}}
+                        <tr>
+                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                            </td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
+                            <td>{{this.fantasyPoints}}</td>
+                        </tr>
+                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="panel panel-default pre-scrollable">
+                <div class="panel-heading">KICKERS</div>
+
+                <table class="table table-striped table-hover table-responsive">
+                    <tbody>
+                    {{#each player}}
+                {{#if this.k}}
+                        <tr>
+                            <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                            </td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
+                            <td>{{this.fantasyPoints}}</td>
+                        </tr>
+                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!--/players by position-->
+
+
+        <!--user's team-->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">TEAM NAME</div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-responsive">
+                        <tbody>
+                        <tr>
+                            <td class="td_headshot"><img class="headshot_small" src="assets/images/blankHeadshot.png" alt="">
+                            </td>
+                            <td>position</td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">Player
+                                Name</a></td>
+                            <td>7.4</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!--/user's team-->
+    </div>
+    <!--/players div's-->
+
+
+    <!--player modal-->
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">
+                        <p>
+                            <span>QB &nbsp;&nbsp;</span>
+                            <strong class="player-name">Matt Ryan</strong>
+                        </p>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+
+                            <img class="img-responsive headshot_modal" src="assets/images/blankHeadshot.png" alt="...">
+
+                        </div>
+                        <div class="col-xs-6 col-md-8">
+                            <p>
+                                <strong>Age</strong>: 23 &nbsp;
+                                <strong>Rank</strong>: 217 &nbsp;
+
+                            </p>
+                            <p>
+                                <strong>Games Played</strong>: 217 &nbsp;
+                            </p>
+                            <p>
+                                <strong>Games Started</strong>: 217 &nbsp;
+                            </p>
+                            <p>
+                                <strong>Receptions</strong>: 23 &nbsp;
+                            </p>
+                            <p>
+                                <strong>Longest Reception</strong>: 217 &nbsp;
+                            </p>
+                            <p>
+                                <strong>Longest Running Attempt</strong>: 217 &nbsp;
+                            </p>
+                            <p>
+                                <strong>Yards Sneaked</strong>: 31 &nbsp;
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-warning btn-xs" data-dismiss="modal">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-dismiss="modal">&#x2713</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/player modal-->
+
+</div>
+
+
+
