@@ -9,10 +9,10 @@
             method: "GET"
         })
         .done(function(response) {
-            var info = response.data;
+            // var info = response.data;
             //myfunction(info);
 
-            console.log(info);
+            console.log(response);
         })
 //}
 
