@@ -7,9 +7,9 @@ $.ajax({
         method: "GET"
     })
     .done(function(response) {
-        myfunction(info);
+        myfunction(response);
 
-        console.log(response);
+        //console.log(response);
     })
 
 
