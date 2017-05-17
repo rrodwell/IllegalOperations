@@ -68,4 +68,4 @@ db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
         console.log("Node app is running on port " + PORT);
     });
-})
+});
