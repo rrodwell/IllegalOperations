@@ -28,7 +28,7 @@ function myfunction(apiInfo) {
                 //tableRow.attr("data-status", childSnapshot.key);
                 var tablePicture = $("<td class='td_headshot'> <img class='headshot_small' src='assets/images/playerImgs/" + apiInfo[i].imgPath + " ' alt=''></td>");
                 var tablePosition = $("<td>" + apiInfo[i].position + "</td>");
-                var tableName = $("<td>" + apiInfo[i].name + "</td>");
+                var tableName = $('<td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">'+ apiInfo[i].name + '</a></td>');
                 var tableScore = $("<td>" + apiInfo[i].fantasyPoints + "</td>");
                 tableRow.append(tablePicture,tablePosition,tableName,tableScore);
                 $("#team-roster").append(tableRow);
