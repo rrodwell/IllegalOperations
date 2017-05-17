@@ -17,9 +17,8 @@ $.ajax({
 function myfunction(apiInfo) {
 
     $(".btn-success").on("click", function() {
+        var playerName = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
-
-            var playerName = $(this).attr("data-key");
             console.log(playerName);
             console.log(apiInfo[0].name);
             if (apiInfo[i].name == playerName) {
@@ -33,6 +32,7 @@ function myfunction(apiInfo) {
                 // var tableScore = $("<td>" + nextArrival + "</td>");
                 tableRow.append(tablePicture);
                 $("#team-roster").append(tableRow);
+                return
 
             } else {
 
