@@ -72,7 +72,7 @@ app.use("/secure", playersRoutes);
 // });
 
 db.sequelize.sync().then(function () {
-    app.listen(Papp.get("port"), function () {
+    app.listen(app.get("port"), function () {
         console.log("Node app is running on port", app.get("port"));
     });
 });
