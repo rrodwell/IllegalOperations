@@ -37,12 +37,8 @@ function myfunction(apiInfo) {
             } else {
 
                 console.log("error")
-            }
-        }
-
-
-
-
+            };
+        };
 
         //$("player-name").push(myTeam)
         // var status = $(this).attr("data-status");
@@ -50,8 +46,7 @@ function myfunction(apiInfo) {
     });
 
     $(".btn-warning").on("click", function() {
-        var status = $(this).attr("data-status");
-        status.attr("data-status", "inactive");
+        $(this).attr("data-status", "inactive");
     });
 
 }
