@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Test1234",
+    "password": "Z",
     "database": "nflplayers2016_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "maade",
+    "password": "Z",
     "database": "nflplayers2016_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
