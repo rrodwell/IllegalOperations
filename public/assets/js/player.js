@@ -20,7 +20,10 @@ function myfunction(apiInfo) {
         for (var i = 0; i < apiInfo.length; i++) {
 
             var playerName = $(this).attr("data-key");
-            if (apiInfo[i].name === playerName) {
+            console.log(playerName);
+            console.log(apiInfo[0].name);
+            if (apiInfo[i].name == playerName) {
+
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
