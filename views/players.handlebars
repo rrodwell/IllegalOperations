@@ -83,8 +83,8 @@
                         {{#each player}}
 
                     {{#if this.qb}}
-                            <tr data-key= "{{this.name}}" data-status = "active">
-                                <td><a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
+                            <tr >
+                                <td><a data-key= "{{this.name}}" data-status = "active" href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#" class="btn btn-success btn-xs">&#x2713</a>
                                 </td>
                                 <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.name}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>

@@ -20,7 +20,7 @@ function myfunction(apiInfo) {
         var playerName = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
             console.log(playerName);
-            console.log(apiInfo[0].name);
+            console.log(apiInfo[1].name);
             if (apiInfo[i].name == playerName) {
 
                 //headshop, name, position, score
