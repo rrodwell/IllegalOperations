@@ -27,3 +27,18 @@ module.exports = function(app) {
     res.render("players", { user: req.user} );
   });
 };
+
+app.get("/players", function(req, res) {
+    db.player.findAll({
+        order: [
+            ["FantasyPoints", "DESC"]
+        ]
+
+    })
+        .then(function(data) {
+            var hbsObject = {
+                player: data
+            };
+            res.render("players", hbsObject);
+        });
+});
