@@ -19,9 +19,13 @@
   "homepage": "https://github.com/rrodwell/IllegalOperations#readme",
   "dependencies": {
     "ajax-request": "^1.2.1",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
+    "express-jwt": "^5.3.0",
+    "jsonwebtoken": "^7.4.0",
     "method-override": "^2.3.8",
     "mysql": "^2.13.0",
     "path": "^0.12.7",

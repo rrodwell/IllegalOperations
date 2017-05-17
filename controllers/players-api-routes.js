@@ -3,42 +3,22 @@ var express = require("express");
 var app = express.Router();
 var path = require("path");
 
+//***All responses from api routes should be returned in JSON.
+
 //get api data for all data 
-app.get("/api/all/", function(req, res) {
+app.get("/all", function(req, res) {
     db.player.findAll({
             order: [
                 ["FantasyPoints", "DESC"]
             ]
-
         })
         .then(function(dbAllPlayers) {
             res.json(dbAllPlayers);
         });
 });
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/assets/index.html"));
-});
-
-
-
-app.get("/players", function(req, res) {
-    db.player.findAll({
-            order: [
-                ["FantasyPoints", "DESC"]
-            ]
-
-        })
-        .then(function(data) {
-            var hbsObject = {
-                player: data
-            };
-            res.render("players", hbsObject);
-        });
-});
-
 // Get route for positions
-app.get("/api/posts/Position/:Position", function(req, res) {
+app.get("/players/:position", function(req, res) {
     db.player.findAll({
             where: {
                 Position: [req.params.Position]
@@ -52,13 +32,7 @@ app.get("/api/posts/Position/:Position", function(req, res) {
         });
 });
 
-app.get("/api/team/all", function(req, res) {
-    db.team.findAll({})
-        .then(function(dbAllPlayers) {
-            res.json(dbAllPlayers);
-        });
-});
-app.get("/api/user/", function(req, res) {
+app.get("/teams", function(req, res) {
     db.team.findAll({})
         .then(function(dbAllPlayers) {
             res.json(dbAllPlayers);
