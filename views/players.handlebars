@@ -37,31 +37,34 @@
                     <div class="row">
                         <div class="col-xs-5">
 
-                            <img class="headshot_large" src="assets/images/blankHeadshot.png" alt="...">
+                            <img class="headshot_large" src="assets/images/playerImgs/{{player.0.imgPath}}"  alt="...">
 
                         </div>
                         <div class="col-xs-7">
                             <a href="#" class="btn btn-warning btn-xs">&#x2716</a> | <a href="#"
-                                                                                        class="btn btn-success btn-xs">&#x2713</a>
+                            class="btn btn-success btn-xs">&#x2713</a>
 
                             <p>
-                                <strong>QB &nbsp;&nbsp;</strong>
+                                <strong>{{player.0.position}} &nbsp;&nbsp;</strong>
                                 <strong class="player-name"><a href="#" data-toggle="modal"
-                                                               data-target=".modal">Player
-                                    Name</a></strong>
+                                    data-target=".modal">{{player.0.name}}</a></strong>
                             </p>
 
                             <p>
-                                <strong>Age</strong>: 23 &nbsp;
-                                <strong>Rank</strong>: 217 &nbsp;
+                                <strong>Age</strong>: {{player.0.age}} &nbsp;
+                            
 
                             </p>
+
                             <p>
-                                <strong>Games Played</strong>: 217 &nbsp;
+                                <strong>Games Played</strong>: {{player.0.gamesPlayed}} &nbsp;
                             </p>
                             <p>
-                                <strong>Games Started</strong>: 217 &nbsp;
+                                <strong>Games Started</strong>: {{player.0.gamesStarted}} &nbsp;
                             </p>
+                                <p>
+                                <strong> Potential Fantasy Points</strong>: {{player.0.fantasyPoints}} &nbsp;
+                                </p>
 
                         </div>
                     </div>
@@ -248,7 +251,7 @@
                                 <strong>Longest Running Attempt</strong>: 217 &nbsp;
                             </p>
                             <p>
-                                <strong>Yards Sneaked</strong>: 31 &nbsp;
+                                <strong>Yards Sacked</strong>: 31 &nbsp;
 
                             </p>
 
