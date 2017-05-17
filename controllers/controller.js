@@ -1,6 +1,8 @@
 var db = require("../models");
 var express = require("express");
 var app = express.Router();
+var path = require("path");
+
 //get api data for all data 
 app.get("/api/all/", function(req, res) {
     db.player.findAll({
@@ -15,6 +17,10 @@ app.get("/api/all/", function(req, res) {
 });
 
 app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/assets/index.html"));
+});
+
+app.get("/players", function(req, res) {
     db.player.findAll({
             order: [
                 ["FantasyPoints", "DESC"]
@@ -25,8 +31,7 @@ app.get("/", function(req, res) {
             var hbsObject = {
                 player: data
             };
-            res.render("index", hbsObject);
-            
+            res.render("players", hbsObject);
         });
 });
 
