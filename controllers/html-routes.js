@@ -23,21 +23,5 @@ module.exports = function(app) {
     }
   }));
 
-  app.get("/main/profile", function(req, res) {
-    res.render("players", { user: req.user} );
-  });
-
-  app.get("/players", function(req, res) {
-    db.player.findAll({
-          order: [
-              ["FantasyPoints", "DESC"]
-          ]
-      }).then(function(dbAllPlayers) {
-          var hbsObject = {
-            player: dbAllPlayers
-          }
-          res.render("players", hbsObject);
-      });
-  });
 
 };
