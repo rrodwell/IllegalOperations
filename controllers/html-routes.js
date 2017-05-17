@@ -1,7 +1,7 @@
 var path = require("path");
 var db = require("../models");
 var jwtExp = require("express-jwt");
-var tokenSecret = require("../config/tokensecret.js");
+var tokenSecret = require("../tokensecret.js");
 
 module.exports = function(app) {
 
