@@ -9,6 +9,7 @@
           integrity="sha384-L/tgI3wSsbb3f/nW9V6Yqlaw3Gj7mpE56LWrhew/c8MIhAYWZ/FNirA64AVkB5pI" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script rel="text/javascript" src="assets/js/index.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>Illegal Formation</title>
@@ -31,30 +32,28 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div>
-                <a href="#" class="btn-link">Reset Password</a> &nbsp | &nbsp <a href="register.html" class="btn-link">Create an
+                <a href="#" class="btn-link">Reset Password</a> &nbsp | &nbsp <a href="/register" class="btn-link">Create an
                 Account</a>
             </div>
             <br>
-            <form>
+            <form action="/user/login" method="POST">
                 <div class="form-group">
 
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" class="form-control" id="user-email" placeholder="Email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="user-password" placeholder="Password" name="password">
                 </div>
                 <div class="form-group">
                     <p class="help-block">Example - return err here - help text here.</p>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button id="login-btn" type="submit" class="btn btn-default" >Submit</button>
 
             </form>
         </div>
     </div>
-
-
     <!--/login form-->
 
 </div>

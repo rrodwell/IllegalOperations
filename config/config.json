@@ -1,8 +1,7 @@
 {
   "development": {
-    "username": "emilykeen711",
-    "password": "password123",
-
+    "username": "root",
+    "password": "Test1234",
     "database": "nflplayers2016_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
