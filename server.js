@@ -42,37 +42,37 @@ var mainRoutes = require("./controllers/main-controller.js");
 
 app.use("/", htmlRoutes);
 
-app.get("/", function(err, req, res, next) {
-  if (err.name === "UnauthorizedError") {
-    res.redirect("/");
-  }
-});
+// app.get("/", function(err, req, res, next) {
+//   if (err.name === "UnauthorizedError") {
+//     res.redirect("/");
+//   }
+// });
 
-app.get("/", jwtExp({
-  secret: tokenSecret,
-  getToken: function fromCookie(req) {
-    if (req.signedCookies) {
-      return req.signedCookies.jwtAuthToken;
-    }
-    return null;
-  },
-  credentialsRequired: false
-}));
+// app.get("/", jwtExp({
+//   secret: tokenSecret,
+//   getToken: function fromCookie(req) {
+//     if (req.signedCookies) {
+//       return req.signedCookies.jwtAuthToken;
+//     }
+//     return null;
+//   },
+//   credentialsRequired: false
+// }));
 
 
-app.use("/", mainRoutes);
+app.use("/main", mainRoutes);
 
 
 // Securing /api/ routes...
-app.use("/api", function(err, req, res, next) {
-  if (err.name === "UnauthorizedError") {
-    res.redirect("/");
-  }
-});
+// app.use("/api", function(err, req, res, next) {
+//   if (err.name === "UnauthorizedError") {
+//     res.redirect("/");
+//   }
+// });
 
-app.use("/api", jwtExp({
-  secret: tokenSecret
-}));
+// app.use("/api", jwtExp({
+//   secret: tokenSecret
+// }));
 
 app.use("/api", playersRoutes);
 
