@@ -25,5 +25,25 @@ app.use("/main", jwtExp({
   }
 }));
 
+app.get("/main/profile", function(req, res) {
+    res.render("players", { user: req.user} );
+  });
+};
+
+app.get("/players", function(req, res) {
+    db.player.findAll({
+        order: [
+            ["FantasyPoints", "DESC"]
+        ]
+
+    })
+        .then(function(data) {
+            var hbsObject = {
+                player: data
+            };
+            res.render("players", hbsObject);
+        });
+});
+
 
 module.exports = app;
