@@ -1,7 +1,7 @@
 var express = require("express"),
     bodyParser = require("body-parser"),
     methodOverride = require("method-override"),
-    jwt = require("jsonwebtoken"),
+        jwt = require("jsonwebtoken"),
     jwtExp = require("express-jwt"),
     tokenSecret = process.env.GT_GROUP_SECRET || require("./tokensecret.js"),
     cookieParser = require("cookie-parser"),
