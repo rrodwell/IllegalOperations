@@ -7,11 +7,11 @@ var tokenSecret = require("../tokensecret.js");
 
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.render("index");
 });
 
 app.get("/register", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/register.html"));
+  res.render("register");
 });
 
 app.get("/players", function(req, res) {

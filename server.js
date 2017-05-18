@@ -4,7 +4,8 @@ var express = require("express"),
     jwt = require("jsonwebtoken"),
     jwtExp = require("express-jwt"),
     tokenSecret = process.env.GT_GROUP_SECRET || require("./tokensecret.js"),
-    cookieParser = require("cookie-parser");
+    cookieParser = require("cookie-parser"),
+    path = require("path")
 
 
 var app = express();
@@ -41,6 +42,27 @@ var mainRoutes = require("./controllers/main-controller.js");
 
 app.use("/", htmlRoutes);
 
+app.get("/", function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.redirect("/");
+  }
+});
+
+app.get("/", jwtExp({
+  secret: tokenSecret,
+  getToken: function fromCookie(req) {
+    if (req.signedCookies) {
+      return req.signedCookies.jwtAuthToken;
+    }
+    return null;
+  },
+  credentialsRequired: false
+}));
+
+
+app.use("/", mainRoutes);
+
+
 // Securing /api/ routes...
 app.use("/api", function(err, req, res, next) {
   if (err.name === "UnauthorizedError") {
@@ -53,24 +75,6 @@ app.use("/api", jwtExp({
 }));
 
 app.use("/api", playersRoutes);
-
-// Securing /user/ routes...
-app.use("/main", function(err, req, res, next) {
-  if (err.name === "UnauthorizedError") {
-    res.redirect("/");
-  }
-});
-
-app.use("/main", jwtExp({
-  secret: tokenSecret,
-  getToken: function fromCookie(req) {
-    if (req.signedCookies) {
-      return req.signedCookies.jwtAuthToken;
-    }
-  }
-}));
-
-app.use("/main", mainRoutes);
 
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
