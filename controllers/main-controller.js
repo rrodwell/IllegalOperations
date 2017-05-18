@@ -81,4 +81,4 @@ var jwtExp = require("express-jwt");
 
 
 
-module.exports = app;
+// module.exports = app;
