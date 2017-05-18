@@ -51,7 +51,7 @@ app.post("/login", function(req, res) {
 
           //
           res.cookie("userToken", userToken, {
-            secure: process.env.NODE_ENV === "production",
+            secure: true,
             signed: true
           });
 
@@ -60,21 +60,6 @@ app.post("/login", function(req, res) {
         }
       });
     }
-  });
-});
-
-app.use("/secure", jwtExp({ secret: tokenSecret}));
-
-app.get("/secure/main", function(req, res) {
-  db.player.findAll({
-    order: [
-        ["FantasyPoints", "DESC"]
-    ]
-  }).then(function(data) {
-      var hbsObject = {
-          player: data
-      };
-      res.send(data);
   });
 });
 
