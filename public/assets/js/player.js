@@ -8,7 +8,7 @@ $.ajax({
     })
     .done(function(response) {
         var playersArr =[];
-        for(var i = 0; i < response.length, i++){
+        for(var i = 0; i < response.length; i++){
             response[i].status = "active";
             playersArr.push(response[i]);
         }
