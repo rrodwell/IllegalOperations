@@ -12,7 +12,7 @@ $.ajax({
             response[i].status = "active";
             playersArr.push(response[i]);
         }
-
+        console.log(playersArr);
         buttonClicks(playersArr);
 
         //console.log(response);
