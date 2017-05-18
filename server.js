@@ -60,7 +60,7 @@ app.use("/", htmlRoutes);
 // }));
 
 
-app.use("/main", mainRoutes);
+// app.use("/main", mainRoutes);
 
 
 // Securing /api/ routes...
