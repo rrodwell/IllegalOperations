@@ -3,7 +3,7 @@ var express = require("express"),
     methodOverride = require("method-override"),
     jwt = require("jsonwebtoken"),
     jwtExp = require("express-jwt"),
-    tokenSecret = require("./tokensecret.js"),
+    tokenSecret = process.env.GT_GROUP_SECRET || require("./tokensecret.js"),
     cookieParser = require("cookie-parser");
 
 
@@ -37,15 +37,40 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 var htmlRoutes = require("./controllers/html-routes.js");
 var playersRoutes = require("./controllers/players-api-routes.js");
-var usersRoutes = require("./controllers/users-controller.js");
+var mainRoutes = require("./controllers/main-controller.js");
 
 app.use("/", htmlRoutes);
 
+// Securing /api/ routes...
+app.use("/api", function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.redirect("/");
+  }
+});
+
+app.use("/api", jwtExp({
+  secret: tokenSecret
+}));
+
 app.use("/api", playersRoutes);
 
-app.use("/user", usersRoutes);
+// Securing /user/ routes...
+app.use("/main", function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.redirect("/");
+  }
+});
 
+app.use("/main", jwtExp({
+  secret: tokenSecret,
+  getToken: function fromCookie(req) {
+    if (req.signedCookies) {
+      return req.signedCookies.jwtAuthToken;
+    }
+  }
+}));
 
+app.use("/main", mainRoutes);
 
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {

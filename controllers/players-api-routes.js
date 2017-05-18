@@ -32,14 +32,6 @@ app.get("/players/:position", function(req, res) {
         });
 });
 
-// app.get("/teams", function(req, res) {
-//     db.team.findAll({})
-//         .then(function(dbAllPlayers) {
-//             res.json(dbAllPlayers);
-//         });
-// });
-
-
 
 // Export routes for server.js to use.
 module.exports = app;
