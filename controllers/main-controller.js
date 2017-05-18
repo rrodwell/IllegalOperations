@@ -27,28 +27,29 @@ app.post("/register", function(req, res) {
     }).catch(function(err) {
 
       console.log("cannot create user");
-
-      res.status(500).send(err);
-
-      console.log("error: " + err);
+      res.render("/", {
+        "status": "Please fill in the form correctly."
+      });
     });
   });
 });
 
 
-app.post("/login", function(req, res) {
+app.post("/", function(req, res) {
   console.log(req.body.email, req.body.password);
   db.user.findOne({
     email: req.body.email
   }).then(function(user) {
     if (!user) {
-      console.log("no user found");
-      //login page should show error saying "please create an account"
+      res.render("index", {
+        "status": "Invalid username or password"
+      });
     } else {
       bcrypt.compare(req.body.password, user.password, function(err, valid) {
         if (err || !valid) {
-          console.log("invalid username or password");
-          res.end();
+          res.render("index", {
+            "status": "Invalid username or password"
+          });
         } else {
 
           var userToken = jwt.sign({
@@ -69,7 +70,7 @@ app.post("/login", function(req, res) {
               user: user,
               player: player
             };
-            res.render("players", hbsObject);
+            res.redirect("/players");
           });
 
         }
