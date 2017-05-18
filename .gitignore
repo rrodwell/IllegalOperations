@@ -1,7 +1,5 @@
 ./config/yahooKeys.js
 ./config/nflKeys.js
-salt.js
-tokensecret.js
 
 # Logs
 logs
