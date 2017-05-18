@@ -3,7 +3,7 @@ var myTeam = [];
 
 $.ajax({
 
-        url: "http://illegal-formation.herokuapp.com/api/all",
+        url: "http://illegal-formation.herokuapp.com/api/players/all",
         method: "GET"
     })
     .done(function(response) {
