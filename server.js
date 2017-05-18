@@ -3,7 +3,7 @@ var express = require("express"),
     methodOverride = require("method-override"),
     jwt = require("jsonwebtoken"),
     jwtExp = require("express-jwt"),
-    tokenSecret = require("./tokensecret.js"),
+    tokenSecret = process.env.GT_GROUP_SECRET || require("./tokensecret.js"),
     cookieParser = require("cookie-parser");
 
 
@@ -16,11 +16,15 @@ var db = require("./models");
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("./public"));
 
+// Body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+// Cookie-parser
 app.use(cookieParser(tokenSecret));
+
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
@@ -31,38 +35,42 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-require("./controllers/html-routes.js")(app);
+var htmlRoutes = require("./controllers/html-routes.js");
 var playersRoutes = require("./controllers/players-api-routes.js");
-var usersRoutes = require("./controllers/users-controller.js");
+var mainRoutes = require("./controllers/main-controller.js");
 
+app.use("/", htmlRoutes);
 
-app.use("/api", playersRoutes);
-
-app.use("/user", usersRoutes);
-
-app.use("/secure", function(req, res, next) {
-
-  console.log("hitting server.js");
-
-  if (!req.header("Authorization")) {
-    res.render("/login");
-    console.log("not authorized");
-  } else {
-    jwt.verify(req.header("Authorization"), tokenSecret, function(err, decoded) {
-      if (err) {
-        console.log("err", err);
-        console.log("not authorized")
-        res.render("/login");
-      } else {
-        res.json({"status": "authorized"});
-        console.log(decoded.data);
-        next();
-      }
-    });
+// Securing /api/ routes...
+app.use("/api", function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.redirect("/");
   }
 });
 
-app.use("/secure", playersRoutes);
+app.use("/api", jwtExp({
+  secret: tokenSecret
+}));
+
+app.use("/api", playersRoutes);
+
+// Securing /user/ routes...
+app.use("/main", function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.redirect("/");
+  }
+});
+
+app.use("/main", jwtExp({
+  secret: tokenSecret,
+  getToken: function fromCookie(req) {
+    if (req.signedCookies) {
+      return req.signedCookies.jwtAuthToken;
+    }
+  }
+}));
+
+app.use("/main", mainRoutes);
 
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
