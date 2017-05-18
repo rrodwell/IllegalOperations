@@ -9,75 +9,75 @@ var tokenSecret = require("../tokensecret.js");
 var jwtExp = require("express-jwt");
 
 
-app.post("/register", function(req, res) {
+// app.post("/register", function(req, res) {
 
-  console.log(req.body.email, req.body.password, req.body.id, req.body.hash);
+//   console.log(req.body.email, req.body.password, req.body.id, req.body.hash);
   
-  bcrypt.hash(req.body.password, salt,function(err, hash) {
-    db.user.create({
-      email: req.body.email,
-      userId: req.body.userId,
-      password: hash
-    }).then(function(user) {
+//   bcrypt.hash(req.body.password, salt,function(err, hash) {
+//     db.user.create({
+//       email: req.body.email,
+//       userId: req.body.userId,
+//       password: hash
+//     }).then(function(user) {
 
-      console.log("successfully created user");
+//       console.log("successfully created user");
 
-      res.redirect("/");
+//       res.redirect("/");
 
-    }).catch(function(err) {
+//     }).catch(function(err) {
 
-      console.log("cannot create user");
-      res.render("/", {
-        "status": "Please fill in the form correctly."
-      });
-    });
-  });
-});
+//       console.log("cannot create user");
+//       res.render("/", {
+//         "status": "Please fill in the form correctly."
+//       });
+//     });
+//   });
+// });
 
 
-app.post("/", function(req, res) {
-  console.log(req.body.email, req.body.password);
-  db.user.findOne({
-    email: req.body.email
-  }).then(function(user) {
-    if (!user) {
-      res.render("index", {
-        "status": "Invalid username or password"
-      });
-    } else {
-      bcrypt.compare(req.body.password, user.password, function(err, valid) {
-        if (err || !valid) {
-          res.render("index", {
-            "status": "Invalid username or password"
-          });
-        } else {
+// app.post("/", function(req, res) {
+//   console.log(req.body.email, req.body.password);
+//   db.user.findOne({
+//     email: req.body.email
+//   }).then(function(user) {
+//     if (!user) {
+//       res.render("index", {
+//         "status": "Invalid username or password"
+//       });
+//     } else {
+//       bcrypt.compare(req.body.password, user.password, function(err, valid) {
+//         if (err || !valid) {
+//           res.render("index", {
+//             "status": "Invalid username or password"
+//           });
+//         } else {
 
-          var userToken = jwt.sign({
-            exp: Math.floor(Date.now() / 1000) + (60 * 60),
-            user: user.email
-          }, tokenSecret);
+//           var userToken = jwt.sign({
+//             exp: Math.floor(Date.now() / 1000) + (60 * 60),
+//             user: user.email
+//           }, tokenSecret);
 
-          //
-          res.cookie("userToken", userToken, {
-            secure: true,
-            signed: true
-          });
+//           //
+//           res.cookie("userToken", userToken, {
+//             secure: true,
+//             signed: true
+//           });
 
-          db.player.findAll({
+//           db.player.findAll({
 
-          }).then(function(player) {
-            var hbsObject = {
-              user: user,
-              player: player
-            };
-            res.redirect("/players");
-          });
+//           }).then(function(player) {
+//             var hbsObject = {
+//               user: user,
+//               player: player
+//             };
+//             res.redirect("/players");
+//           });
 
-        }
-      });
-    }
-  });
-});
+//         }
+//       });
+//     }
+//   });
+// });
 
 
 
