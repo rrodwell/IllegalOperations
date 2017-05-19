@@ -59,34 +59,34 @@ p {
      margin: 0;
 }
 
-tr [data-status="drafted"]{
+tr[data-status="drafted"]{
     background-color: lightgreen;
 }
 
-tr [data-status="inactive"]{
+tr[data-status="inactive"]{
     background-color: lightsalmon;
 }
 
-btn-warning [data-status="drafted"] {
+.btn-warning[data-status="drafted"] {
     visibility: hidden;
 }
 
-btn-warning [data-status="inactive"] {
+.btn-warning[data-status="inactive"] {
     visibility: hidden;
 }
 
-btn-success [data-status="drafted"] {
+.btn-success[data-status="drafted"] {
     visibility: hidden;
 }
 
-btn-success [data-status="inactive"] {
+.btn-success[data-status="inactive"] {
     visibility: hidden;
 }
-btn-link [data-status="drafted"] {
+.btn-link[data-status="drafted"] {
     color: black;
 }
 
-btn-link [data-status="inactive"] {
+.btn-link[data-status="inactive"] {
     color: black;
 }
 
