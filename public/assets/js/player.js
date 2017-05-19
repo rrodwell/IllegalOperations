@@ -78,7 +78,7 @@ function buttonClicks(apiInfo) {
                 var modAge = '<strong>Age</strong>: ' + apiInfo[i].age + ' &nbsp;'
                 var modGamesPlayed = '<strong>Games Played</strong>: ' + apiInfo[i].gamesPlayed + ' &nbsp;'
                 var modGamesStarted = '<strong>Games Started</strong>: ' + apiInfo[i].gamesStarted + ' &nbsp;'
-                var modReceptions = '<strong>Receptions</strong>: ' + apiInfo[i].reception + ' &nbsp;'
+                var modReceptions = '<strong>Receptions</strong>: ' + apiInfo[i].receptions + ' &nbsp;'
                 var modLongestReceptions = '<strong>Longest Reception</strong>: ' + apiInfo[i].longestReception + ' &nbsp;'
                 var modLongestRushingAttempt = '<strong>Longest Rushing Attempt</strong>: ' + apiInfo[i].longestRushingAttempt + ' &nbsp;'
                 var modYardSacked = '<strong>Yards Sacked</strong>: ' + apiInfo[i].ydsSkd + ' &nbsp;'
