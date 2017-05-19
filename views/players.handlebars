@@ -36,33 +36,30 @@
                     <div class="row">
                         <div class="col-xs-5">
 
-                            <img class="headshot_large" src="assets/images/playerImgs/{{player.0.imgPath}}"  alt="...">
+                            <img class="headshot_large"  id="headshot" src="assets/images/playerImgs/{{player.0.imgPath}}"  alt="...">
 
                         </div>
-                        <div class="col-xs-7">
-                            <a href="#" class="btn btn-warning btn-xs" data-key="{{player.0.id}}">&#x2716</a> | <a href="#"
-                            class="btn btn-success btn-xs" data-key="{{player.0.id}}">&#x2713</a>
+                        <div class="col-xs-7"  id="btns">
 
-                            <p>
-                                <strong>{{player.0.position}} &nbsp;&nbsp;</strong>
-                                <strong class="player-name"><a href="#" data-toggle="modal"
-                                    data-target=".modal">{{player.0.name}}</a></strong>
+
+                            <p id="name">
+
                             </p>
 
-                            <p>
-                                <strong>Age</strong>: {{player.0.age}} &nbsp;
+                            <p id="age">
+
                             
 
                             </p>
 
-                            <p>
-                                <strong>Games Played</strong>: {{player.0.gamesPlayed}} &nbsp;
+                            <p id="gamesPlayed">
+
                             </p>
-                            <p>
-                                <strong>Games Started</strong>: {{player.0.gamesStarted}} &nbsp;
+                            <p id="gamesStarted">
+
                             </p>
-                                <p>
-                                <strong> Potential Fantasy Points</strong>: {{player.0.fantasyPoints}} &nbsp;
+                                <p id="fantasyPoints">
+
                                 </p>
 
                         </div>
@@ -185,7 +182,7 @@
         <!--user's team-->
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">TEAM NAME</div>
+                <div class="panel-heading">TEAM ROSTER</div>
                 <div class="panel-body">
                     <table class="table table-hover table-responsive" id ="team-roster">
                         <tbody>
@@ -224,32 +221,31 @@
                     <div class="row">
                         <div class="col-xs-6 col-md-4">
 
-                            <img class="img-responsive headshot_modal" src="assets/images/blankHeadshot.png" alt="...">
+                            <img class="img-responsive headshot_modal"  id="mode_headshot" src="assets/images/blankHeadshot.png" alt="...">
 
                         </div>
                         <div class="col-xs-6 col-md-8">
-                            <p>
-                                <strong>Age</strong>: 23 &nbsp;
-                                <strong>Rank</strong>: 217 &nbsp;
+                            <p id="mode_age">
+
 
                             </p>
-                            <p>
-                                <strong>Games Played</strong>: 217 &nbsp;
+                            <p id="mode_gamesPlayed">
+
                             </p>
-                            <p>
-                                <strong>Games Started</strong>: 217 &nbsp;
+                            <p id="mode_gamesStarted">
+
                             </p>
-                            <p>
-                                <strong>Receptions</strong>: 23 &nbsp;
+                            <p id="mode_receptions">
+
                             </p>
-                            <p>
-                                <strong>Longest Reception</strong>: 217 &nbsp;
+                            <p id="mode_longestReception">
+
                             </p>
-                            <p>
-                                <strong>Longest Running Attempt</strong>: 217 &nbsp;
+                            <p id="mode_longestRunningAttempt">
+
                             </p>
-                            <p>
-                                <strong>Yards Sacked</strong>: 31 &nbsp;
+                            <p id="mode_yardsSacked">
+
 
                             </p>
 
