@@ -59,8 +59,42 @@ p {
      margin: 0;
 }
 
+tr[data-status="drafted"]{
+    background-color: lightgreen;
+}
+
+tr[data-status="inactive"]{
+    background-color: lightsalmon;
+}
+
+/*.btn-warning[data-status="drafted"] {*/
+    /*visibility: hidden;*/
+/*}*/
+
+/*.btn-warning[data-status="inactive"] {*/
+    /*visibility: hidden;*/
+/*}*/
+
+/*.btn-success[data-status="drafted"] {*/
+    /*visibility: hidden;*/
+/*}*/
+
+/*.btn-success[data-status="inactive"] {*/
+    /*visibility: hidden;*/
+}
+.btn-link[data-status="drafted"] {
+    color: black;
+}
+
+.btn-link[data-status="inactive"] {
+    color: black;
+}
+
+
+
 /*------------------ login page*/
 
 .help-block{
     color: orangered;
 }
+
