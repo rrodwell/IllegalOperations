@@ -7,8 +7,8 @@ $.ajax({
         method: "GET"
     })
     .done(function(response) {
-        var playersArr =[];
-        for(var i = 0; i < response.length; i++){
+        var playersArr = [];
+        for (var i = 0; i < response.length; i++) {
             response[i].status = "active";
             playersArr.push(response[i]);
         }
@@ -36,15 +36,15 @@ function buttonClicks(apiInfo) {
                 //tableRow.attr("data-status", childSnapshot.key);
                 var tablePicture = $("<td class='td_headshot'> <img class='headshot_small' src='assets/images/playerImgs/" + apiInfo[i].imgPath + " ' alt=''></td>");
                 var tablePosition = $("<td>" + apiInfo[i].position + "</td>");
-                var tableName = $('<td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">'+ apiInfo[i].name + '</a></td>');
+                var tableName = $('<td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">' + apiInfo[i].name + '</a></td>');
                 var tableScore = $("<td>" + apiInfo[i].fantasyPoints + "</td>");
-                tableRow.append(tablePicture,tablePosition,tableName,tableScore);
+                tableRow.append(tablePicture, tablePosition, tableName, tableScore);
                 $("#team-roster").append(tableRow);
 
                 populateNextBest(apiInfo);
                 return
 
-            } 
+            }
         }
 
         //$("player-name").push(myTeam)
@@ -65,8 +65,36 @@ function buttonClicks(apiInfo) {
             }
         }
         populateNextBest(apiInfo);
+
     });
 
+    $(".btn-link").onon("click", function() {
+        var playerId = $(this).attr("data-key");
+        for (var i = 0; i < apiInfo.length; i++) {
+            if (apiInfo[i].id == playerId) {
+                var modPosition = ' <span>' + apiInfo[i].position + ' &nbsp;&nbsp;</span>';
+                var modName = '<strong class="player-name">' + apiInfo[i].name + '</strong>'
+                var modImg = '<img class="img-responsive headshot_modal" src="assets/images/playerImgs/' + apiInfo[i].imgPath + ' " alt="...">'
+                var modAge = '<strong>Age</strong>: ' + apiInfo[i].age + ' &nbsp;'
+                var modGamesPlayed = '<strong>Games Played</strong>: ' + apiInfo[i].gamesPlayed + ' &nbsp;'
+                var modGamesStarted = '<strong>Games Started</strong>: ' + apiInfo[i].gamesStarted + ' &nbsp;'
+                var modReceptions = '<strong>Receptions</strong>: ' + apiInfo[i].reception + ' &nbsp;'
+                var modLongestReceptions = '<strong>Longest Reception</strong>: ' + apiInfo[i].longestReception + ' &nbsp;'
+                var modLongestRushingAttempt = '<strong>Longest Rushing Attempt</strong>: ' + apiInfo[i].longestRushingAttempt + ' &nbsp;'
+                var modYardSacked = '<strong>Yards Sacked</strong>: ' + apiInfo[i].ydsSkd + ' &nbsp;'
+                $("#mode_position").html(modPosition);
+                $("#mode_name").html(modName);
+                $("#mode_img").html(modImg);
+                $("#mode_age").html(modAge);
+                $("#mode_gamesPlayed").html(modGamesPlayed);
+                $("#mode_gamesStarted").html(modGamesStarted);
+                $("#mode_receptions").html(modReceptions);
+                $("#mode_longestReception").html(modLongestReceptions);
+                $("#mode_longestRunningAttempt").html(modLongestRushingAttempt);
+                $("#mode_yardsSackeds").html(modYardSacked);
+            }
+        }
+    });
     // $(".btn-reset").on("click", function() {
     //     $(this).attr("data-status", "active");
     //
@@ -74,22 +102,22 @@ function buttonClicks(apiInfo) {
     // });
 }
 
-function populateNextBest(arrPlayers){
+function populateNextBest(arrPlayers) {
     var newArr = [];
-    for(var i = 0; i < arrPlayers.length; i++){
-        if(arrPlayers[i].status === "active"){
+    for (var i = 0; i < arrPlayers.length; i++) {
+        if (arrPlayers[i].status === "active") {
             newArr.push(arrPlayers[i]);
         }
     }
     //writing buttons to dom may not have click handlers
-    var buttons = '<a href="#" class="btn btn-warning btn-xs" data-key="'+ newArr[0].id +'">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="'+ newArr[0].id +'">&#x2713</a>';
-    var playerImg = '<img class="headshot_large" src="assets/images/playerImgs/'+ newArr[0].imgPath +'"  alt="...">';
-    var playerName = '<strong>'+ newArr[0].position +'</strong> <strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">'+newArr[0].name+'</a></strong>';
-    var age = '<strong>Age</strong>: '+ newArr[0].age+'<br><strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">'+ newArr[0].name +'</a></strong>';
-    var age = '<strong>Age</strong>: '+ newArr[0].age;
-    var gamesPlayed = '<strong>Games Played</strong>: '+newArr[0].gamesPlayed;
-    var gamesStarted = '<strong>Games Started</strong>: '+ newArr[0].gamesStarted;
-    var ptFantasy = '<strong> Potential Fantasy Points</strong>: '+ newArr[0].fantasyPoints;
+    var buttons = '<a href="#" class="btn btn-warning btn-xs" data-key="' + newArr[0].id + '">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="' + newArr[0].id + '">&#x2713</a>';
+    var playerImg = '<img class="headshot_large" src="assets/images/playerImgs/' + newArr[0].imgPath + '"  alt="...">';
+    var playerName = '<strong>' + newArr[0].position + '</strong> <strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">' + newArr[0].name + '</a></strong>';
+    var age = '<strong>Age</strong>: ' + newArr[0].age + '<br><strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">' + newArr[0].name + '</a></strong>';
+    var age = '<strong>Age</strong>: ' + newArr[0].age;
+    var gamesPlayed = '<strong>Games Played</strong>: ' + newArr[0].gamesPlayed;
+    var gamesStarted = '<strong>Games Started</strong>: ' + newArr[0].gamesStarted;
+    var ptFantasy = '<strong> Potential Fantasy Points</strong>: ' + newArr[0].fantasyPoints;
 
     $("#btns").html(buttons);
     $("#img").html(playerImg);
