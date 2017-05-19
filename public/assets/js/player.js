@@ -44,10 +44,7 @@ function buttonClicks(apiInfo) {
                 populateNextBest();
                 return
 
-            } else {
-
-                console.log("error")
-            }
+            } 
         }
 
         //$("player-name").push(myTeam)
@@ -65,8 +62,6 @@ function buttonClicks(apiInfo) {
                 apiInfo[i].status = "inactive";
                 $(this).parents("tr").attr("data-status", "inactive");
                 $('btn[data-key="' + playerId + '"]').attr("data-status", "inactive");
-            } else {
-                console.log("error");
             }
         }
         populateNextBest();
