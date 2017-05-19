@@ -129,7 +129,7 @@ function populateNextBest(arrPlayers) {
 
 
 };
-module.exports = buttonClicks;
+// module.exports = buttonClicks;
 
 
 // modal

@@ -3,7 +3,7 @@ var express = require("express");
 var userRouter = express.Router();
 
 
-userRouter.get("/", function(req, res) {
+userRouter.get("/", function(req, res, next) {
   db.player.findAll({
         order: [
             ["FantasyPoints", "DESC"]
@@ -14,7 +14,7 @@ userRouter.get("/", function(req, res) {
           player: player
         };
         res.render("players", hbsObject);
-    });
+    }).catch(next);
 });
 
 

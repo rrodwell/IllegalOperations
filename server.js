@@ -63,8 +63,6 @@ app.get("/", jwtExp({
 });
 
 app.use("/", userRoutes);
-
-// Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("./public"));
 
 db.sequelize.sync().then(function () {
