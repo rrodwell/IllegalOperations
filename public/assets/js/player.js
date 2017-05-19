@@ -3,7 +3,7 @@ var myTeam = [];
 
 $.ajax({
 
-        url: "http://illegal-formation.herokuapp.com/api/players/all",
+        url: "https://illegal-formation.herokuapp.com/api/players/all",
         method: "GET",
         headers: {
             "Authorization": "Bearer " + Cookies.get("jwtAuthToken")
