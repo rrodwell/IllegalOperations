@@ -29,6 +29,7 @@ function buttonClicks(apiInfo) {
             console.log(apiInfo[1].name);
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "drafted";
+                $("tr").attr("data-status", "drafted");
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
