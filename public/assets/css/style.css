@@ -59,8 +59,26 @@ p {
      margin: 0;
 }
 
+tr,[data-status="drafted"]{
+    background-color: lightgreen;
+}
+
+tr,[data-status="inactive"]{
+    background-color: lightsalmon;
+}
+
+btn,[data-status="drafted"] {
+    visibility: hidden;
+}
+
+btn,[data-status="drafted"] {
+    visibility: hidden;
+}
+
+
 /*------------------ login page*/
 
 .help-block{
     color: orangered;
 }
+

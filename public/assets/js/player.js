@@ -7,22 +7,28 @@ $.ajax({
         method: "GET"
     })
     .done(function(response) {
-        myfunction(response);
+        var playersArr =[];
+        for(var i = 0; i < response.length; i++){
+            response[i].status = "active";
+            playersArr.push(response[i]);
+        }
+        //console.log(playersArr);
+        buttonClicks(playersArr);
 
         //console.log(response);
-    })
+    });
 
 
 
-function myfunction(apiInfo) {
+function buttonClicks(apiInfo) {
 
     $(".btn-success").on("click", function() {
-        var playerName = $(this).attr("data-key");
+        var playerId = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
-            console.log(playerName);
+            console.log(playerId);
             console.log(apiInfo[1].name);
-            if (apiInfo[i].name == playerName) {
-
+            if (apiInfo[i].id == playerId) {
+                apiInfo[i].status = "drafted";
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
@@ -32,21 +38,33 @@ function myfunction(apiInfo) {
                 var tableScore = $("<td>" + apiInfo[i].fantasyPoints + "</td>");
                 tableRow.append(tablePicture,tablePosition,tableName,tableScore);
                 $("#team-roster").append(tableRow);
-                return
+
+                populateNextBest();
 
             } else {
 
                 console.log("error")
-            };
-        };
+            }
+        }
 
         //$("player-name").push(myTeam)
         // var status = $(this).attr("data-status");
         // status.attr("data-status", "drafted");
+
     });
 
     $(".btn-warning").on("click", function() {
         $(this).attr("data-status", "inactive");
+        populateNextBest();
     });
 
+    $(".btn-reset").on("click", function() {
+        $(this).attr("data-status", "active");
+
+        resetPlayer();
+    });
 }
+
+function populateNextBest(){
+
+};
