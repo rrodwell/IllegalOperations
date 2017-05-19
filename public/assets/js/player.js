@@ -30,6 +30,7 @@ function buttonClicks(apiInfo) {
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "drafted";
                 $(this).parents("tr").attr("data-status", "drafted");
+                $('btn[data-key="' + playerId + '"]').attr("data-status", "drafted");
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
@@ -56,7 +57,18 @@ function buttonClicks(apiInfo) {
     });
 
     $(".btn-warning").on("click", function() {
-        $(this).attr("data-status", "inactive");
+        var playerId = $(this).attr("data-key");
+        for (var i = 0; i < apiInfo.length; i++) {
+            //console.log(playerId);
+            //console.log(apiInfo[1].name);
+            if (apiInfo[i].id == playerId) {
+                apiInfo[i].status = "inactive";
+                $(this).parents("tr").attr("data-status", "inactive");
+                $('btn[data-key="' + playerId + '"]').attr("data-status", "inactive");
+            } else {
+                console.log("error");
+            }
+        }
         populateNextBest();
     });
 
