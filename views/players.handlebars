@@ -166,8 +166,8 @@
                         <tbody>
                         {{#each player}}
                     {{#if this.k}}
-                            <tr class="active">
-                                <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.name}}">&#x2713</a>
+                            <tr data-key="active">
+                                <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.id}}">&#x2713</a>
                                 </td>
                                 <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal">{{this.id}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>
