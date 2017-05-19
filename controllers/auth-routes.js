@@ -15,6 +15,7 @@ authRouter.get("/register", function(req, res) {
 authRouter.post("/register", function(req, res) {
   bcrypt.genSalt(10, function(err, data) {
     if (err) {
+      console.log("there is an error");
       res.render("register", {
         status: "Unable to create username with password provided."
       });
@@ -22,11 +23,13 @@ authRouter.post("/register", function(req, res) {
       bcrypt.hash(req.body.password, salt, function(err, hash) {
         db.user.create({
           email: req.body.email,
-          userId: req.body.id,
+          userId: req.body.userId,
           password: hash
         }).then(function(user) {
+          console.log("redirect not working");
           res.redirect("/auth/login");
         }).catch(function(err) {
+          console.log("error: " + err);
           res.render("register", {
             status: "Unable to create usernmae with password provided",
             error: err

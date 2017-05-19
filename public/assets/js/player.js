@@ -4,7 +4,10 @@ var myTeam = [];
 $.ajax({
 
         url: "http://illegal-formation.herokuapp.com/api/players/all",
-        method: "GET"
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + Cookies.get("jwtAuthToken")
+        }
     })
     .done(function(response) {
         var playersArr = [];

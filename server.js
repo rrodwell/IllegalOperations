@@ -41,7 +41,7 @@ app.use("/auth", authRoutes);
 app.use("/auth", express.static("./public"));
 
 // API MIDDLEWARE
-app.use("/api", jwtExp({ secret: tokenSecret }));
+// app.use("/api", jwtExp({ secret: tokenSecret }));
 app.use("/api", apiRoutes);
 
 // USER MIDDLEWARE
