@@ -12,7 +12,7 @@ $.ajax({
             response[i].status = "active";
             playersArr.push(response[i]);
         }
-        console.log(playersArr);
+        //console.log(playersArr);
         buttonClicks(playersArr);
 
         //console.log(response);
@@ -28,7 +28,8 @@ function buttonClicks(apiInfo) {
             console.log(playerId);
             console.log(apiInfo[1].name);
             if (apiInfo[i].id == playerId) {
-
+                apiInfo[i].status = "drafted";
+                $("tr").attr("data-status", "drafted");
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
@@ -38,18 +39,19 @@ function buttonClicks(apiInfo) {
                 var tableScore = $("<td>" + apiInfo[i].fantasyPoints + "</td>");
                 tableRow.append(tablePicture,tablePosition,tableName,tableScore);
                 $("#team-roster").append(tableRow);
-                return
+
+                populateNextBest();
 
             } else {
 
                 console.log("error")
-            };
-        };
+            }
+        }
 
         //$("player-name").push(myTeam)
         // var status = $(this).attr("data-status");
         // status.attr("data-status", "drafted");
-        populateNextBest();
+
     });
 
     $(".btn-warning").on("click", function() {
