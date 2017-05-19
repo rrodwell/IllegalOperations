@@ -77,7 +77,7 @@ function buttonClicks(apiInfo) {
 function populateNextBest(arrPlayers){
     console.log(arrPlayers);
     var newArr = [];
-    for(var i = 0; i < arrPlayers; i++){
+    for(var i = 0; i < arrPlayers.length; i++){
         if(arrPlayers[i].status === "active"){
             newArr.push(arrPlayers[i]);
         }
