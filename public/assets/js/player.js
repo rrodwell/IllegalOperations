@@ -25,10 +25,11 @@ function buttonClicks(apiInfo) {
     $(".btn-success").on("click", function() {
         var playerId = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
-            console.log(playerId);
-            console.log(apiInfo[1].name);
+            //console.log(playerId);
+            //console.log(apiInfo[1].name);
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "drafted";
+                $(this).parents("tr").attr("data-status", "drafted");
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
@@ -40,6 +41,7 @@ function buttonClicks(apiInfo) {
                 $("#team-roster").append(tableRow);
 
                 populateNextBest();
+                return
 
             } else {
 
