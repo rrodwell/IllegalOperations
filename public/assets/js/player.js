@@ -112,7 +112,7 @@ function populateNextBest(arrPlayers) {
     //writing buttons to dom may not have click handlers
     var buttons = '<a href="#" class="btn btn-warning btn-xs" data-key="' + newArr[0].id + '">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="' + newArr[0].id + '">&#x2713</a>';
     var playerImg = '<img class="headshot_large" src="assets/images/playerImgs/' + newArr[0].imgPath + '"  alt="...">';
-    var playerName = '<strong>' + newArr[0].position + '</strong> <strong class="player-name"><a href="#" class = "btn-link" data-toggle="modal" data-target=".modal">' + newArr[0].name + '</a></strong>';
+    var playerName = '<strong>' + newArr[0].position + '</strong> <strong class="player-name"><a href="#" class = "btn-link" data-key= "'+newArr[0].id+'"data-toggle="modal" data-target=".modal">' + newArr[0].name + '</a></strong>';
     var age = '<strong>Age</strong>: ' + newArr[0].age + '<br><strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">' + newArr[0].name + '</a></strong>';
     var age = '<strong>Age</strong>: ' + newArr[0].age;
     var gamesPlayed = '<strong>Games Played</strong>: ' + newArr[0].gamesPlayed;
