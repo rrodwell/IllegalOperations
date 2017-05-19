@@ -92,12 +92,12 @@ function populateNextBest(arrPlayers){
     var ptFantasy = '<strong> Potential Fantasy Points</strong>: '+ newArr[0].fantasyPoints;
 
     // $("#btns").append(buttons);
-    $("#img").innerHTML(playerImg);
-    $("#name").innerHTML(playerName);
-    $("#age").innerHTML(age);
-    $("#gamesPlayed").innerHTML(gamesPlayed);
-    $("#gamesStarted").innerHTML(gamesStarted);
-    $("#fantasyPoints").innerHTML(ptFantasy);
+    $("#img").html(playerImg);
+    $("#name").html(playerName);
+    $("#age").html(age);
+    $("#gamesPlayed").html(gamesPlayed);
+    $("#gamesStarted").html(gamesStarted);
+    $("#fantasyPoints").html(ptFantasy);
 
 
 };
