@@ -67,20 +67,20 @@ tr[data-status="inactive"]{
     background-color: lightsalmon;
 }
 
-.btn-warning[data-status="drafted"] {
-    visibility: hidden;
-}
+/*.btn-warning[data-status="drafted"] {*/
+    /*visibility: hidden;*/
+/*}*/
 
-.btn-warning[data-status="inactive"] {
-    visibility: hidden;
-}
+/*.btn-warning[data-status="inactive"] {*/
+    /*visibility: hidden;*/
+/*}*/
 
-.btn-success[data-status="drafted"] {
-    visibility: hidden;
-}
+/*.btn-success[data-status="drafted"] {*/
+    /*visibility: hidden;*/
+/*}*/
 
-.btn-success[data-status="inactive"] {
-    visibility: hidden;
+/*.btn-success[data-status="inactive"] {*/
+    /*visibility: hidden;*/
 }
 .btn-link[data-status="drafted"] {
     color: black;

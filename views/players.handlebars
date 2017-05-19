@@ -78,7 +78,7 @@
             <div class="panel panel-default pre-scrollable">
                 <div class="panel-heading">QUARTERBACKS</div>
                 <div class="pre-scrollable">
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-hover table-responsive">
                         <tbody>
                         {{#each player}}
 
@@ -86,7 +86,7 @@
                             <tr data-status="active">
                                 <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}" data-status="active">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.id}}" data-status="active">&#x2713</a>
                                 </td>
-                                <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-status="active">{{this.name}}</a></td>
+                                <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-key= "{{this.id}}" data-status="active">{{this.name}}</a></td>
                                 <td>{{this.fantasyPoints}}</td>
                             </tr>
                             {{/if}}
@@ -100,7 +100,7 @@
             <div class="panel panel-default pre-scrollable">
                 <div class="panel-heading">WIDE RECEIVERS</div>
                 <div class="pre-scrollable">
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-hover table-responsive">
                         <tbody>
                         <tbody>
                     {{#each player}}
@@ -108,7 +108,7 @@
                         <tr data-status="active">
                             <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}" data-status="active">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.id}}" data-status="active">&#x2713</a>
                             </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-status="active">{{this.name}}</a></td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-key= "{{this.id}}" data-status="active">{{this.name}}</a></td>
                             <td>{{this.fantasyPoints}}</td>
                         </tr>
                         {{/if}}
@@ -121,14 +121,14 @@
             <div class="panel panel-default pre-scrollable">
                 <div class="panel-heading">RUNNING BACKS</div>
                 <div class="pre-scrollable">
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-hover table-responsive">
                         <tbody>
                         {{#each player}}
                     {{#if this.rb}}
                         <tr data-status="active">
                             <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}" data-status="active">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.id}}" data-status="active">&#x2713</a>
                             </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-status="active">{{this.name}}</a></td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-key= "{{this.id}}" data-status="active">{{this.name}}</a></td>
                             <td>{{this.fantasyPoints}}</td>
                         </tr>
                             {{/if}}
@@ -142,14 +142,14 @@
             <div class="panel panel-default pre-scrollable">
                 <div class="panel-heading">TIGHT ENDS</div>
                 <div class="pre-scrollable">
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-hover table-responsive">
                         <tbody>
                     {{#each player}}
                     {{#if this.te}}
                         <tr data-status="active">
                             <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}" data-status="active">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.id}}" data-status="active">&#x2713</a>
                             </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-status="active">{{this.name}}</a></td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-key= "{{this.id}}" data-status="active">{{this.name}}</a></td>
                             <td>{{this.fantasyPoints}}</td>
                         </tr>
                             {{/if}}
@@ -162,14 +162,14 @@
             <div class="panel panel-default pre-scrollable">
                 <div class="panel-heading">KICKERS</div>
                 <div class="pre-scrollable">
-                    <table class="table table-striped table-hover table-responsive">
+                    <table class="table table-hover table-responsive">
                         <tbody>
                         {{#each player}}
                     {{#if this.k}}
                         <tr data-status="active">
                             <td><a href="#" class="btn btn-warning btn-xs" data-key= "{{this.id}}" data-status="active">&#x2716</a> | <a href="#" class="btn btn-success btn-xs" data-key= "{{this.id}}" data-status="active">&#x2713</a>
                             </td>
-                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-status="active">{{this.name}}</a></td>
+                            <td><a href="#" class="btn btn-link btn-xs" data-toggle="modal" data-target=".modal" data-key= "{{this.id}}" data-status="active">{{this.name}}</a></td>
                             <td>{{this.fantasyPoints}}</td>
                         </tr>
                             {{/if}}
@@ -187,7 +187,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">TEAM NAME</div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover table-responsive" id ="team-roster">
+                    <table class="table table-hover table-responsive" id ="team-roster">
                         <tbody>
                         <tr>
                             <td class="td_headshot"><img class="headshot_small" src="assets/images/blankHeadshot.png" alt="">
