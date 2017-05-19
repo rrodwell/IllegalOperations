@@ -41,6 +41,7 @@ function buttonClicks(apiInfo) {
                 $("#team-roster").append(tableRow);
 
                 populateNextBest();
+                return
 
             } else {
 
