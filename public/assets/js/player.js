@@ -12,8 +12,7 @@ $.ajax({
             response[i].status = "active";
             playersArr.push(response[i]);
         }
-        populateNextBest(playersArr)
-        //console.log(playersArr);
+        populateNextBest(playersArr);
         buttonClicks(playersArr);
 
         //console.log(response);
@@ -76,23 +75,22 @@ function buttonClicks(apiInfo) {
 }
 
 function populateNextBest(arrPlayers){
-    console.log(arrPlayers);
     var newArr = [];
     for(var i = 0; i < arrPlayers.length; i++){
         if(arrPlayers[i].status === "active"){
             newArr.push(arrPlayers[i]);
         }
     }
-    var buttons = '<a href="#" class="btn btn-warning btn-xs" data-key="'+ newArr[0].name +'">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="{{player.0.id}}">&#x2713</a>';
+    var buttons = '<a href="#" class="btn btn-warning btn-xs" data-key="'+ newArr[0].id +'">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="{{player.0.id}}">&#x2713</a>';
     var playerImg = '<img class="headshot_large" src="assets/images/playerImgs/'+ newArr[0].imgPath +'"  alt="...">';
-    var playerName = '<strong>'+ newArr[0].position +'</strong>  <strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">'+newArr[0].name+'</a></strong>';
+    var playerName = '<strong>'+ newArr[0].position +'</strong> '+'  <strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">'+newArr[0].name+'</a></strong>';
     var age = '<strong>Age</strong>: '+ newArr[0].age+'<br><strong class="player-name"><a href="#" data-toggle="modal" data-target=".modal">'+ newArr[0].name +'</a></strong>';
     var age = '<strong>Age</strong>: '+ newArr[0].age;
     var gamesPlayed = '<strong>Games Played</strong>: '+newArr[0].gamesPlayed;
     var gamesStarted = '<strong>Games Started</strong>: '+ newArr[0].gamesStarted;
     var ptFantasy = '<strong> Potential Fantasy Points</strong>: '+ newArr[0].fantasyPoints;
 
-    // $("#btns").append(buttons);
+    $("#btns").append(buttons);
     $("#img").html(playerImg);
     $("#name").html(playerName);
     $("#age").html(age);
@@ -103,38 +101,6 @@ function populateNextBest(arrPlayers){
 
 };
 
-//
-// <div class="col-xs-5">
-//
-//     <img class="headshot_large" src="assets/images/playerImgs/{{player.0.imgPath}}"  alt="...">
-//
-//     </div>
-//     <div class="col-xs-7">
-//     <a href="#" class="btn btn-warning btn-xs" data-key="{{player.0.id}}">&#x2716</a> | <a href="#"
-// class="btn btn-success btn-xs" data-key="{{player.0.id}}">&#x2713</a>
-//
-// <p>
-// <strong>{{player.0.position}} &nbsp;&nbsp;</strong>
-// <strong class="player-name"><a href="#" data-toggle="modal"
-// data-target=".modal">{{player.0.name}}</a></strong>
-// </p>
-//
-// <p>
-// <strong>Age</strong>: {{player.0.age}} &nbsp;
-//
-//
-// </p>
-//
-// <p>
-// <strong>Games Played</strong>: {{player.0.gamesPlayed}} &nbsp;
-// </p>
-// <p>
-// <strong>Games Started</strong>: {{player.0.gamesStarted}} &nbsp;
-// </p>
-// <p>
-// <strong> Potential Fantasy Points</strong>: {{player.0.fantasyPoints}} &nbsp;
-// </p>
-// </div>
 
 // modal
 //
