@@ -1,12 +1,11 @@
 var db = require("../models");
 var express = require("express");
-var app = express.Router();
-var path = require("path");
+var apiRouter = express.Router();
 
 //***All responses from api routes should be returned in JSON.
 
 //get api data for all data 
-app.get("/players/all", function(req, res) {
+apiRouter.get("/players/all", function(req, res) {
     db.player.findAll({
             order: [
                 ["FantasyPoints", "DESC"]
@@ -18,7 +17,7 @@ app.get("/players/all", function(req, res) {
 });
 
 // Get route for positions
-app.get("/players/:position", function(req, res) {
+apiRouter.get("/players/:position", function(req, res) {
     db.player.findAll({
             where: {
                 Position: [req.params.Position]
@@ -34,4 +33,4 @@ app.get("/players/:position", function(req, res) {
 
 
 // Export routes for server.js to use.
-module.exports = app;
+module.exports = apiRouter;
