@@ -33,8 +33,8 @@ function buttonClicks(apiInfo) {
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "drafted";
                 // $(this).parents("tr").attr("data-status", "drafted");
-                $('tr[data-key="' + playerId + '"]').attr("data-status", "drafted");
-                $('btn[data-key="' + playerId + '"]').attr("data-status", "drafted");
+                $('[data-key="' + playerId + '"]').attr("data-status", "drafted");
+                // $('btn[data-key="' + playerId + '"]').attr("data-status", "drafted");
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
@@ -64,9 +64,9 @@ function buttonClicks(apiInfo) {
             //console.log(apiInfo[1].name);
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "inactive";
-                // $(this).parents("tr").attr("data-status", "inactive");
-                $('tr[data-key="' + playerId + '"]').attr("data-status", "inactive");
-                $('btn[data-key="' + playerId + '"]').attr("data-status", "inactive");
+                // // $(this).parents("tr").attr("data-status", "inactive");
+                $('[data-key="' + playerId + '"]').attr("data-status", "inactive");
+                // $('btn[data-key="' + playerId + '"]').attr("data-status", "inactive");
             }
         }
         populateNextBest(apiInfo);
