@@ -24,7 +24,9 @@ authRouter.post("/register", function(req, res) {
         db.user.create({
           email: req.body.email,
           userId: req.body.userId,
-          password: hash
+          password: hash,
+          league_name: req.body.league_name,
+          team_name: req.body.team_name
         }).then(function(user) {
           console.log("redirect not working");
           res.redirect("/auth/login");

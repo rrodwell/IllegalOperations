@@ -21,6 +21,20 @@ module.exports = function(sequelize, DataTypes) {
         },
         password: {
             type: DataTypes.STRING
+        },
+        team_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [3, 255]
+            }
+        },
+        league_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [3, 255]
+            }
         }
     });
     return User;
