@@ -3,7 +3,7 @@ var myTeam = [];
 
 $.ajax({
 
-        url: "/api/players/all",
+        url: "https://illegal-formation.herokuapp.com/api/players/all",
         method: "GET",
         headers: {
             "Authorization": "Bearer " + Cookies.get("jwtAuthToken")
@@ -32,9 +32,8 @@ function buttonClicks(apiInfo) {
             //console.log(apiInfo[1].name);
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "drafted";
-                // $(this).parents("tr").attr("data-status", "drafted");
-                $('[data-key="' + playerId + '"]').attr("data-status", "drafted");
-                // $('btn[data-key="' + playerId + '"]').attr("data-status", "drafted");
+                $(this).parents("tr").attr("data-status", "drafted");
+                $('btn[data-key="' + playerId + '"]').attr("data-status", "drafted");
                 //headshop, name, position, score
                 var tableRow = $("<tr>");
                 //tableRow.attr("data-status", childSnapshot.key);
@@ -64,16 +63,15 @@ function buttonClicks(apiInfo) {
             //console.log(apiInfo[1].name);
             if (apiInfo[i].id == playerId) {
                 apiInfo[i].status = "inactive";
-                // // $(this).parents("tr").attr("data-status", "inactive");
-                $('[data-key="' + playerId + '"]').attr("data-status", "inactive");
-                // $('btn[data-key="' + playerId + '"]').attr("data-status", "inactive");
+                $(this).parents("tr").attr("data-status", "inactive");
+                $('btn[data-key="' + playerId + '"]').attr("data-status", "inactive");
             }
         }
         populateNextBest(apiInfo);
 
     });
 
-    $(document).on("click", ".btn-link", function() {
+    $(".btn-link").on("click", function() {
         var playerId = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
             if (apiInfo[i].id == playerId) {
@@ -86,6 +84,7 @@ function buttonClicks(apiInfo) {
                 var modReceptions = '<strong>Receptions</strong>: ' + apiInfo[i].receptions + ' &nbsp;'
                 var modLongestReceptions = '<strong>Longest Reception</strong>: ' + apiInfo[i].longestReception + ' &nbsp;'
                 var modLongestRushingAttempt = '<strong>Longest Rushing Attempt</strong>: ' + apiInfo[i].longestRushingAttempt + ' &nbsp;'
+                var modbuttons = '<a href="#" class="btn btn-warning btn-xs" data-key="' + apiInfo[i].id + '">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="' + apiInfo[i].id + '" onClick = "buttonClicks">&#x2713</a>';
                 var modYardSacked = '<strong>Yards Sacked</strong>: ' + apiInfo[i].ydsSkd + ' &nbsp;'
                 $("#mode_position").html(modPosition);
                 $("#mode_name").html(modName);
@@ -97,6 +96,7 @@ function buttonClicks(apiInfo) {
                 $("#mode_longestReception").html(modLongestReceptions);
                 $("#mode_longestRunningAttempt").html(modLongestRushingAttempt);
                 $("#mode_yardsSackeds").html(modYardSacked);
+                $("#mod_buttons").html();
             }
         }
     });
