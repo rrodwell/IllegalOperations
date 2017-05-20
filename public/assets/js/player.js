@@ -1,6 +1,3 @@
-var myTeam = [];
-
-
 $.ajax({
 
         url: "/api/players/all",
