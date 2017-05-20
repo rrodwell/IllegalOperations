@@ -56,7 +56,7 @@ function buttonClicks(apiInfo) {
 
     });
 
-    $(".btn-warning").on("click", function() {
+    $(document).on("click", ".btn-warning", function() {
         var playerId = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
             //console.log(playerId);
