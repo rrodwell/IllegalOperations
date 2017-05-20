@@ -25,7 +25,7 @@ $.ajax({
 
 function buttonClicks(apiInfo) {
 
-    $(".btn-success").on("click", function() {
+    $(document).on("click", ".btn-success", function() {
         var playerId = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
             //console.log(playerId);
