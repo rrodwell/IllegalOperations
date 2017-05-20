@@ -96,7 +96,7 @@ function buttonClicks(apiInfo) {
                 $("#mode_longestReception").html(modLongestReceptions);
                 $("#mode_longestRunningAttempt").html(modLongestRushingAttempt);
                 $("#mode_yardsSackeds").html(modYardSacked);
-                $("#mod_buttons").html();
+                $("#mod_buttons").html(modbuttons);
             }
         }
     });
