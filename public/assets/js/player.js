@@ -3,7 +3,7 @@ var myTeam = [];
 
 $.ajax({
 
-        url: "https://illegal-formation.herokuapp.com/api/players/all",
+        url: "/api/players/all",
         method: "GET",
         headers: {
             "Authorization": "Bearer " + Cookies.get("jwtAuthToken")
@@ -71,7 +71,7 @@ function buttonClicks(apiInfo) {
 
     });
 
-    $(".btn-link").on("click", function() {
+    $(document).on("click", ".btn-link", function() {
         var playerId = $(this).attr("data-key");
         for (var i = 0; i < apiInfo.length; i++) {
             if (apiInfo[i].id == playerId) {
