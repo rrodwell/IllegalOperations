@@ -1,4 +1,4 @@
-var myTeam = [];
+
 
 
 $.ajax({
@@ -81,12 +81,13 @@ function buttonClicks(apiInfo) {
                 var modName = '<strong class="player-name">' + apiInfo[i].name + '</strong>'
                 var modImg = '<img class="img-responsive headshot_modal" src="assets/images/playerImgs/' + apiInfo[i].imgPath + ' " alt="...">'
                 var modAge = '<strong>Age</strong>: ' + apiInfo[i].age + ' &nbsp;'
-                var modGamesPlayed = '<strong>Games Played</strong>: ' + apiInfo[i].gamesPlayed + ' &nbsp;'
-                var modGamesStarted = '<strong>Games Started</strong>: ' + apiInfo[i].gamesStarted + ' &nbsp;'
-                var modReceptions = '<strong>Receptions</strong>: ' + apiInfo[i].receptions + ' &nbsp;'
-                var modLongestReceptions = '<strong>Longest Reception</strong>: ' + apiInfo[i].longestReception + ' &nbsp;'
-                var modLongestRushingAttempt = '<strong>Longest Rushing Attempt</strong>: ' + apiInfo[i].longestRushingAttempt + ' &nbsp;'
-                var modYardSacked = '<strong>Yards Sacked</strong>: ' + apiInfo[i].ydsSkd + ' &nbsp;'
+                var modGamesPlayed = '<strong>Games Played</strong>: ' + apiInfo[i].gamesPlayed + ' &nbsp;';
+                var modGamesStarted = '<strong>Games Started</strong>: ' + apiInfo[i].gamesStarted + ' &nbsp;';
+                var modReceptions = '<strong>Receptions</strong>: ' + apiInfo[i].receptions + ' &nbsp;';
+                var modLongestReceptions = '<strong>Longest Reception</strong>: ' + apiInfo[i].longestReception + ' &nbsp;';
+                var modLongestRushingAttempt = '<strong>Longest Rushing Attempt</strong>: ' + apiInfo[i].longestRushingAttempt + ' &nbsp;';
+                var modYardSacked = '<strong>Yards Sacked</strong>: ' + apiInfo[i].ydsSkd + ' &nbsp;';
+                var modButtons = '<a href="#" class="btn btn-warning btn-xs" data-key="' + apiInfo[i][0].id + '">&#x2716</a> | <a href="#"class="btn btn-success btn-xs" data-key="' + apiInfo[i].id + '" onClick = "buttonClicks">&#x2713</a>';
                 $("#mode_position").html(modPosition);
                 $("#mode_name").html(modName);
                 $("#mode_img").html(modImg);
@@ -97,6 +98,8 @@ function buttonClicks(apiInfo) {
                 $("#mode_longestReception").html(modLongestReceptions);
                 $("#mode_longestRunningAttempt").html(modLongestRushingAttempt);
                 $("#mode_yardsSackeds").html(modYardSacked);
+                $("#mod_buttons").html(modButtons);
+
             }
         }
     });
